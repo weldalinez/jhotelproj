@@ -1,0 +1,63 @@
+package jhotel;
+
+/**
+ * Class Administrasi untuk mengatur dan membatasi pesanan
+ *
+ * @author Weldaline Zafira
+ * @version 10-3-2018
+ */
+public class Administrasi
+{
+    // instance variables - replace the example below with your own
+
+    /**
+     * An example of a method - replace this comment with your own
+     */
+    public static void pesananDitugaskan(Pesanan pesan, Room kamar)
+    {
+        pesan.setStatusSelesai(false);
+        pesan.setStatusDiproses(true);
+        pesan.setRoom(kamar);
+        //DatabaseRoom.getRoom(kamar.getHotel(),kamar.getNomorKamar()).setStatusKamar(StatusKamar.Booked);
+
+    }
+    public static void pesananDibatalkan(Room kamar)
+    {
+        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        if(pesan != null) {
+            pesan.setStatusSelesai(false);
+            pesan.setStatusDiproses(false);
+            pesan.setRoom(null);
+        }
+        DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.Vacant);
+    }
+    public static void pesananSelesai(Room kamar)
+    {
+        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        if(pesan != null) {
+            pesan.setStatusSelesai(true);
+            pesan.setStatusDiproses(false);
+            pesan.setRoom(null);
+        }
+        DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.Vacant);
+    }
+    public static void pesananDibatalkan(Pesanan pesan)
+    {
+        DatabaseRoom.getRoom(pesan.getRoom().getHotel(),pesan.getRoom().getNomorKamar()).setStatusKamar(StatusKamar.Vacant);
+        pesan.setStatusAktif(false);
+        pesan.setStatusSelesai(false);
+        pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
+    }
+    
+    public static void pesananSelesai(Pesanan pesan)
+    {
+        DatabaseRoom.getRoom(pesan.getRoom().getHotel(),pesan.getRoom().getNomorKamar()).setStatusKamar(StatusKamar.Vacant);
+        pesan.setStatusAktif(false);
+        pesan.setStatusSelesai(true);
+        pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
+    }
+
+    //public static void cariKamarKosong(){}
+}

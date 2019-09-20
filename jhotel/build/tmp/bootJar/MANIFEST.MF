@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+Manifest-Version: 1.0
+Main-Class: org.springframework.boot.loader.JarLauncher
+Start-Class: JHotel
+
+=======
+Manifest-Version: 1.0
+Main-Class: org.springframework.boot.loader.JarLauncher
+Start-Class: JHotel
+
+>>>>>>> e92a5575b80f332e0e6a43c75e616b46f8f38d03

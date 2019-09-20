@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuatPesananActivity">
+
+    <TextView
+        android:id="@+id/staticRoomNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:text="Room Number:"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/hitung" />
+
+    <TextView
+        android:id="@+id/room_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/staticRoomNumber"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="90dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/staticTariff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Tariff:"
+        android:layout_below="@+id/staticRoomNumber"
+        android:layout_alignStart="@+id/staticRoomNumber"
+        android:layout_marginStart="19dp" />
+
+    <TextView
+        android:id="@+id/tariff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/room_number"
+        android:layout_alignTop="@+id/staticTariff"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/staticDurasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/staticTariff"
+        android:layout_below="@+id/staticTariff"
+        android:layout_marginTop="54dp"
+        android:text="Durasi:" />
+
+    <EditText
+        android:id="@+id/durasi_hari"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_alignBaseline="@+id/staticDurasi"
+        android:layout_alignBottom="@+id/staticDurasi"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="64dp" />
+
+    <TextView
+        android:id="@+id/staticTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="Total:"
+        android:layout_below="@+id/durasi_hari"
+        android:layout_alignEnd="@+id/staticDurasi" />
+
+    <TextView
+        android:id="@+id/total_biaya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tariff"
+        android:layout_alignTop="@+id/staticTotal"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/hitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/total_biaya"
+        android:layout_marginTop="44dp"
+        android:layout_toStartOf="@+id/total_biaya"
+        android:text="Hitung" />
+
+    <Button
+        android:id="@+id/pesan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/hitung"
+        android:layout_below="@+id/hitung"
+        android:layout_marginTop="26dp"
+        android:text="Pesan" />
+
+</android.support.constraint.ConstraintLayout>
